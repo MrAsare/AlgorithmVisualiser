@@ -11,6 +11,7 @@ import javafx.scene.control.DateCell;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class HelloApplication extends Application {
 
     private static final int WIDTH = 1280;
     private static final int HEIGHT = 720;
-    DrawableArray drawableArray = new DrawableArray(new int[]{1,233,51,-1,5,6});
+    DrawableArray drawableArray = new DrawableArray(new int[]{1,233,51,-1,5,6}, Color.RED,Color.BLACK, Color.BLACK);
 
 
     Canvas canvas;
@@ -29,10 +30,6 @@ public class HelloApplication extends Application {
     public void start(Stage stage) {
         stage.setScene(new Scene(CreateContent()));
         stage.show();
-
-
-
-
     }
 
 
@@ -45,7 +42,6 @@ public class HelloApplication extends Application {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-                drawableArray.step();
             }
         };
 
